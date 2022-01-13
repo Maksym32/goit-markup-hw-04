@@ -144,7 +144,7 @@ ul {
 .hero {
   max-width: 1600px;
   margin: 0 auto;
-  background-color: #C4C4C4;
+  background-color: var(--hero-background-color);
   background-image: linear-gradient(
   rgba(47, 48, 58, 0.4),
   rgba(47, 48, 58, 0.4)),
@@ -162,16 +162,21 @@ ul {
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 
 }
-.button {
+.hero-button {
   padding: 10px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  font-family: "Roboto";
   color: var(--white-color);
   background-color: var(--accent-color);
   border-radius: 4px;
   border-style: none;
   cursor: pointer;
-  letter-spacing: 0.06em;
 }
 
 
@@ -204,8 +209,8 @@ ul {
 .feature-item {
   width: 270px;
 }
-.feature-item + .feature-item {
-  margin-left: 30px;
+.feature-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .icon {
@@ -218,7 +223,6 @@ ul {
 
 }
 .feature-title {
-  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   margin-top: 30px;
@@ -239,8 +243,8 @@ ul {
 .work-list {
 display: flex;
 }
-.work-item + .work-item {
-  margin-left: 30px;
+.work-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 
@@ -263,9 +267,13 @@ background-color: var(--secondary-background-color);
               0px 1px 3px rgba(0, 0, 0, 0.12);
 
 }
-.team-item + .team-item {
-  margin-left: 30px;
+.team-item:not(:last-child) {
+  margin-right: 30px;
   width: 270;
+}
+.team-info-box {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .team-title {
@@ -277,18 +285,13 @@ background-color: var(--secondary-background-color);
 }
 .team-profession {
   margin-top: 10px;
-  
   color: var(--secondary-text-color);
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
 }
-.team-info {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
+
 .social-list {
   display: flex;
   justify-content: center;
@@ -389,15 +392,17 @@ margin-top: 9px;
   display: flex;
   margin-top: 20px;
 }
+.footer-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .list-title {
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--white-color);
-}
-.footer-social-item:not(:last-child) {
-  margin-right: 10px;
 }
 
 .footer-social-link {
@@ -431,6 +436,7 @@ fill: currentColor;
 }
 
 .filter-button {
+  font-family: "Roboto";
   padding: 6px 22px;
   color: var(--primary-text-color);
   background-color: var(--secondary-background-color);
